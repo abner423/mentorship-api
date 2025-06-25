@@ -53,3 +53,22 @@ To spin up a local MySQL database using Docker, run:
 ```bash
 docker build -t mentorship-db-image .
 docker run -d -p 3306:3306 --name mentorship-db mentorship-db-image
+```
+
+## 🚧 Things to Improve
+
+Although the project covers essential features and architectural practices, there are some aspects that could be enhanced in future iterations:
+
+- ✅ Add more advanced business rule validations on endpoints
+- ✅ Write unit and integration tests for services and controllers
+- ✅ Implement pagination for all list endpoints
+- ✅ Add user authentication and authorization using Spring Security
+- ✅ Improve error handling for edge cases and database exceptions
+- ✅ Improve Swagger documentation with request/response examples and descriptions
+- ✅ Implement soft delete logic for sessions or students if needed
+- ✅ Add support for multiple session statuses transitions (e.g., reschedule)
+- ✅ Use environment-based configuration for database and security
+- ✅ Refactor ExecutorService creation using Factory Pattern with Singleton scope for better control and testability
+
+These improvements were not fully prioritized in this version in order to focus on demonstrating core skills like clean architecture, OOP, concurrency, Bean Validation, and RESTful design within the interview timeframe.
+
