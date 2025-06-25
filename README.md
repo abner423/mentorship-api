@@ -2,6 +2,14 @@
 
 This is a **simple Java and Spring Boot API** created for study purposes. It simulates a mentorship system where students can request sessions with mentors. Despite being a learning project, it covers several important backend development concepts.
 
+## 🔍 Swagger Documentation
+
+This project includes Swagger for exploring and testing the API endpoints.
+
+Once the application is running, you can access the Swagger UI at the following URL:
+
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
 ## ✅ Features
 
 - Student and Mentor registration
