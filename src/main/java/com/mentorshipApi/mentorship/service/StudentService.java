@@ -9,6 +9,7 @@ import com.mentorshipApi.mentorship.exception.UserAlreadyExistsException;
 import com.mentorshipApi.mentorship.repository.MentorRepository;
 import com.mentorshipApi.mentorship.repository.SessionRepository;
 import com.mentorshipApi.mentorship.repository.StudentRepository;
+import com.mentorshipApi.mentorship.utils.PasswordUtils;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -45,7 +46,7 @@ public class StudentService {
         Optional<Student> student = studentRepository.findByEmail(request.getEmail());
 
         if(student.isEmpty()) {
-            studentRepository.save(new Student(request.getName(), request.getEmail(), request.getPassword()));
+            studentRepository.save(new Student(request.getName(), request.getEmail(),  PasswordUtils.encryptPassword(request.getPassword())));
         } else {
             throw new UserAlreadyExistsException("A student with this email already exists");
         }

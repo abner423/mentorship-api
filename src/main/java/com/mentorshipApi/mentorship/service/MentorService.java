@@ -8,6 +8,7 @@ import com.mentorshipApi.mentorship.exception.EntityNotFoundException;
 import com.mentorshipApi.mentorship.exception.UserAlreadyExistsException;
 import com.mentorshipApi.mentorship.repository.MentorRepository;
 import com.mentorshipApi.mentorship.repository.SessionRepository;
+import com.mentorshipApi.mentorship.utils.PasswordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,7 +30,7 @@ public class MentorService {
         Optional<Mentor> mentor = mentorRepository.findByEmail(request.getEmail());
 
         if(mentor.isEmpty()) {
-            mentorRepository.save(new Mentor(request.getName(), request.getEmail(), request.getPassword()));
+            mentorRepository.save(new Mentor(request.getName(), request.getEmail(), PasswordUtils.encryptPassword(request.getPassword())));
         } else {
             throw new UserAlreadyExistsException("A Mentor with this email already exists");
         }
