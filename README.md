@@ -18,8 +18,10 @@ This is a **simple Java and Spring Boot API** created for study purposes. It sim
 - **Spring Data JPA**
 - **Bean Validation (Jakarta Validation)**
 - **Object-Oriented Programming**
-- **Exception Handling**
+- **Custom Exceptions**
+- **Exception Handling with Global Handler**
 - **Multi-threading with ExecutorService**
+- **Lazy Loading with JPA**
 - **Custom error response**
 - **Swagger (OpenAPI) for documentation**
 - **Spring Security** (basic setup for extensibility)
