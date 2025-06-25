@@ -1,6 +1,7 @@
 package com.mentorshipApi.mentorship.config;
 
 import com.mentorshipApi.mentorship.dto.ApiError;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Hidden
 @ControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
